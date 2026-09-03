@@ -10,8 +10,8 @@ import base64
 import json
 from collections.abc import AsyncIterator, Callable, Mapping
 from typing import Any
-
 from unittest.mock import patch
+
 import anyio
 import httpx2
 import pytest
@@ -780,7 +780,7 @@ async def test_custom_headers_forwarded_to_http_client() -> None:
 async def test_http_client_provided_overrides_headers_param() -> None:
     """When http_client is provided, headers/timeout/auth params are ignored."""
     custom_client = httpx2.AsyncClient(headers={"User-Agent": "explicit-client/1.0"})
-    
+
     # headers kwarg should be silently ignored — http_client wins
     async with streamable_http_client(
         "http://localhost:8080/mcp",

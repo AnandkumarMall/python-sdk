@@ -4,10 +4,10 @@ from __future__ import annotations as _annotations
 
 import contextlib
 import logging
-from datetime import timedelta
 from collections.abc import AsyncGenerator, Awaitable, Callable
 from contextlib import asynccontextmanager
 from dataclasses import dataclass
+from datetime import timedelta
 
 import anyio
 import httpx2
